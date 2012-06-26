@@ -1,4 +1,7 @@
 class Level < Chingu::GameState
+  ENEMY_PROBABILITY_PER_TICK = 0.25
+  MAX_ENEMIES = 5
+
   def initialize
     super
     @spaceship = Spaceship.create
@@ -7,7 +10,8 @@ class Level < Chingu::GameState
   def update
     super
 
-    if rand(100) < 4 && Enemy.all.size < 5
+    if rand < ENEMY_PROBABILITY_PER_TICK &&
+      Enemy.all.size < MAX_ENEMIES
       Enemy.create
     end
 
