@@ -4,6 +4,9 @@ class Spaceship < Chingu::GameObject
   START_X = 200
   START_Y = 200
 
+  has_trait :bounding_circle, debug: $DEBUG
+  has_traits :collision_detection
+
   def initialize
     super
     self.x = START_X
@@ -13,10 +16,8 @@ class Spaceship < Chingu::GameObject
       holding_left: :move_left,
       holding_right: :move_right,
       holding_up: :move_up,
-      holding_down: :move_down,
-      space: :pewpew
+      holding_down: :move_down
     }
-    preload_sounds
   end
 
   private
@@ -35,17 +36,5 @@ class Spaceship < Chingu::GameObject
 
   def move_down
     @y += SPEED
-  end
-
-  def pewpew
-    laser.play
-  end
-
-  def preload_sounds
-    laser
-  end
-
-  def laser
-    Gosu::Sound['laser.wav']
   end
 end

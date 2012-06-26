@@ -5,6 +5,7 @@ $LOAD_PATH << File.dirname(__FILE__)
 require 'chingu'
 require 'spaceship'
 require 'level'
+require 'enemy'
 
 # Input
 # :holding_left = 'every frame'
