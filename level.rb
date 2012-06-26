@@ -10,13 +10,18 @@ class Level < Chingu::GameState
   def update
     super
 
-    if rand < ENEMY_PROBABILITY_PER_TICK &&
-      Enemy.all.size < MAX_ENEMIES
+    if enemy_needed?
       Enemy.create
     end
 
     @spaceship.each_collision(Enemy) do |spaceship, enemy|
       enemy.destroy
     end
+  end
+
+  private
+
+  def enemy_needed?
+    rand < ENEMY_PROBABILITY_PER_TICK && Enemy.all.size < MAX_ENEMIES
   end
 end
