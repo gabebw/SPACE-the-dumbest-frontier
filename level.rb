@@ -5,6 +5,8 @@ class Level < Chingu::GameState
   def initialize
     super
     @spaceship = Spaceship.create
+    @score = 0
+    @score_text = Chingu::Text.create("Score: #{@score}", x: 10, y: 10, zorder: 55, size: 20)
   end
 
   def update
@@ -16,6 +18,8 @@ class Level < Chingu::GameState
 
     @spaceship.each_collision(Enemy) do |spaceship, enemy|
       enemy.destroy
+      @score += Enemy::SCORE
+      update_score_text
     end
   end
 
@@ -23,5 +27,9 @@ class Level < Chingu::GameState
 
   def enemy_needed?
     rand < ENEMY_PROBABILITY_PER_TICK && Enemy.all.size < MAX_ENEMIES
+  end
+
+  def update_score_text
+    @score_text.text = "Score: #{@score}"
   end
 end

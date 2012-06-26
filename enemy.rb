@@ -2,6 +2,8 @@ class Enemy < Chingu::GameObject
   has_trait :bounding_circle, debug: $DEBUG
   has_traits :collision_detection, :velocity
 
+  SCORE = 5
+
   def initialize(options = {})
     super(zorder: 1)
     self.image = Gosu::Image["sprite.gif"]
