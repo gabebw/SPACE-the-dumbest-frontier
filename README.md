@@ -1,5 +1,8 @@
 # SPACE! The dumbest frontier!
 
+A basic space game. It's a demo of [Chingu](https://github.com/ippa/chingu),
+made during a Madison Ruby user group hack night.
+
 To play:
 
     # Ruby 1.9+
