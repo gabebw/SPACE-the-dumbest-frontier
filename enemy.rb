@@ -33,10 +33,14 @@ class Enemy < Chingu::GameObject
 
   def random_color
     Gosu::Color.new(0xff000000).tap do |color|
-      color.red = rand(255 - 40) + 40
-      color.green = rand(255 - 40) + 40
-      color.blue = rand(255 - 40) + 40
+      color.red = random_color_value
+      color.green = random_color_value
+      color.blue = random_color_value
     end
+  end
+
+  def random_color_value
+    rand(255 - 40) + 40
   end
 
   def laser
