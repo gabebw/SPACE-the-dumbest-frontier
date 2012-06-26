@@ -20,6 +20,12 @@ class Spaceship < Chingu::GameObject
     }
   end
 
+  def update
+    # wrap around the screen
+    @x %= $window.width
+    @y %= $window.height
+  end
+
   private
 
   def move_left
