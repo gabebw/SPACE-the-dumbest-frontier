@@ -6,7 +6,7 @@ made during a Madison Ruby user group hack night.
 To play:
 
     # Ruby 1.9+
-    ruby game.rb
+    ruby play.rb
 
 Controls:
 
