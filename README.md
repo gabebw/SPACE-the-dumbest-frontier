@@ -10,7 +10,7 @@ made during a Madison Ruby user group hack night.
 
 ## Controls:
 
-Up/down/left/righ do what you think. You can hold the keys.
+Up/down/left/right do what you think. You can hold the keys.
 
 `Escape` to quit.
 
