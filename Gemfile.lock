@@ -5,11 +5,13 @@ GEM
       crack
       gosu (>= 0.7.25)
       rest-client
-    crack (0.3.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     gosu (0.7.50)
     mime-types (1.19)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    safe_yaml (1.0.5)
 
 PLATFORMS
   ruby
